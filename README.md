@@ -7,7 +7,7 @@ An insurance company in the US is reviewing its insurance claims/charges and is 
 The objective is to do a cause and effect analysis on historic-data of insurance claims and predict how much premium amount should  the company it's customers.
 
 ### Approach:
- #### Excel Analysis
+#### Excel Analysis
    1. To understand the given data the histograms and box plots were used and primary EDA have been carried out and following insights were gathered.
          1. The demography that we are looking at has more no. of young people in the age bracket of 18-30
          2. More no of people have lesser insurance charges, whereas lesser no of people have high insurance charges, It would be interesting to know who are these people
@@ -48,5 +48,21 @@ With all these done and after a good understanding of the dataset and the fields
        2. Also a smoker in southeast and southwest region will claim higher charges
        3. If we look at only the region as an independant variable then people from south east and south west region claim lesser charges w.r.t our reference region northeast
        4. Claimants having more no. of children also show higher claims
+
+#### Python Analysis
+This is a Python script that uses the scikit-learn library to train two machine learning models, a Linear Regression model and a Gradient Boosting Regression model, on an insurance dataset. 
+1. Import necessary libraries: The script starts by importing the necessary libraries, including joblib, pandas, matplotlib.pyplot, train_test_split, LinearRegression, GradientBoostingRegressor, and mean_squared_error.
+2. Load and preprocess data: The script loads the insurance dataset from a CSV file using the pandas library. It then preprocesses the data by mapping categorical variables to numerical values.
+3. Split data into features and target: The script splits the data into features (X) and target (y) by dropping the 'charges' column from the dataset.
+4. Split data into training and test sets: The script uses the train_test_split function to split the data into training and test sets, with 20% of the data reserved for testing.
+5. Train Linear Regression model: The script creates an instance of the LinearRegression class and fits it to the training data using the fit method.
+6. Train Gradient Boosting Regression model: The script creates an instance of the GradientBoostingRegressor class and fits it to the training data using the fit method.
+7. Make predictions on test data: The script uses both trained models to make predictions on the test data using the predict method.
+8. Calculate mean squared error for both models: The script calculates the mean squared error (MSE) for both models using the mean_squared_error function from the sklearn.metrics module. It then prints the MSE values for both models.
+9. Calculate R² for both models: The script calculates the coefficient of determination (R²) for both models using the r2_score function from the sklearn.metrics module. It then prints the R² values for both models.
+10. Visualize the model’s performances: The script creates a DataFrame containing actual and predicted values for both models, then uses matplotlib.pyplot to create two subplots visualizing these values.
+11. Get user input: The script prompts the user to enter information about a new customer, including their age, sex, BMI, number of children, smoker status, and region.
+12. Create DataFrame for new customer: The script creates a DataFrame containing this information.
+13. Make prediction for new customer: The script uses the trained Gradient Boosting Regression model to make a prediction for this new customer’s insurance cost using the predict method. It then prints this predicted value.
 
 ### Tools used: Advanced Excel, Python(NumPy, Pandas, Statsmodel)
